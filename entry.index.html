@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>  
+  <div className="font-sans bg-gray-100 min-h-screen flex items-center justify-center">
+    <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl w-full">
+      <h1 className="text-3xl font-bold mb-6 text-center">エントリーフォーム</h1>
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+          <p className="text-lg mb-2">
+            <span className="text-blue-500 font-semibold">1 →</span> 弊社インターンに興味をお持ちいただきありがとうございます<span className="text-2xl">😊</span>
+          </p>
+          <p className="mb-2">まずはインターンのことを聞いてみませんか?</p>
+          <p className="font-semibold">応募はたった30秒で完了!</p>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="name" className="block mb-2 font-semibold">
+              <!-- あなたの名前を教えて下さい(1/6)* -->
+            </label>
+            <p className="text-sm text-gray-600 mb-2">ex. ヤマダタロウ</p>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              onKeyPress={handleKeyPress}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="テキストを入力..."
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300"
+          >
+            OK
+          </button>
+          <span className="ml-2 text-sm text-gray-600">Enter ↵ を押す</span>
+        </form>
+        <div className="mt-4 flex justify-end">
+          <button className="bg-blue-500 text-white p-2 rounded-full mr-2">
+            <i className="fas fa-chevron-up"></i>
+          </button>
+          <button className="bg-blue-500 text-white p-2 rounded-full">
+            <i className="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
